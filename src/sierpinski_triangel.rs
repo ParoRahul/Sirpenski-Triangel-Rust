@@ -62,7 +62,7 @@ impl SierpinskiTriangel {
     }
 
     pub fn run(&self, runopt: &Runopt) {
-        let mut init_point = Point::from(0, 0);
+        let mut init_point: Point = Point::from(0, 0);
         let mut counter = self.iteration_count.clone();
         let mut rng = thread_rng();
         let mut result_points: Vec<Point> = Vec::new();

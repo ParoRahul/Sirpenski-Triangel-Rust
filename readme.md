@@ -6,4 +6,7 @@
 ![sirpenski triangel](./Sierpinski_Triangel.png)
 
 
-Module needs to be extended to print the same in terminal.
+![sirpenski triangel terminal](./Sierpinski_Triangel_at_terminal.png)
+
+
+
