@@ -3,7 +3,7 @@
 2. For Printing Image Image Carte is used as dependency
 
 
-![sirpenski triangel](./SierpinskiTriangel.png)
+![sirpenski triangel](./Sierpinski_Triangel.png)
 
 
 Module needs to be extended to print the same in terminal.
