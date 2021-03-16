@@ -9,6 +9,11 @@ use rand::{thread_rng, Rng};
 const IMAGE_HEIGHT: u32 = 600;
 const IMAGE_WIDTH: u32 = 800;
 
+pub enum Runopt {
+    PrintImage,
+    PrintTerminal,
+}
+
 pub struct SierpinskiTriangel {
     iteration_count: u32,
     corner_point: [Point; 3],
@@ -36,12 +41,20 @@ impl SierpinskiTriangel {
         })
     }
 
-    pub fn run(&self) {
-        let mut image_result = self.create_image();
+    pub fn run(&self, runopt: Runopt) {
+        match runopt {
+            Runopt::PrintImage => self.run_image(),
+            Runopt::PrintTerminal => self.run_image(),
+        }
+    }
+
+    fn run_image(&self) {
         let mut init_point = Point::from(IMAGE_WIDTH / 2, 0);
         let mut counter = self.iteration_count;
         let mut rng = thread_rng();
-        let pixel = image_result[(0, 0)];
+        let mut image_result = self.create_image();
+        // let pixel = image_result[(0, 0)];
+        let pixel = image::Luma([0u8]);
         while counter > 0 {
             let index = rng.gen_range(0..3);
             let rand_point = self.corner_point[index];
@@ -53,5 +66,9 @@ impl SierpinskiTriangel {
             counter = counter - 1;
         }
         let _ = image_result.save("SierpinskiTriangel.png").unwrap();
+    }
+
+    fn run_terminal(&self) {
+        print!("This is not implemented Yet")
     }
 }

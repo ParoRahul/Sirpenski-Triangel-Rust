@@ -1,6 +1,7 @@
 mod point;
 mod sierpinski_triangel;
 
+use sierpinski_triangel::Runopt;
 use sierpinski_triangel::SierpinskiTriangel;
 
 fn main() {
@@ -9,5 +10,5 @@ fn main() {
     // println!("dimensions {:?}", img.dimensions());
     let algo = SierpinskiTriangel::init(100000);
 
-    algo.run();
+    algo.run(Runopt::PrintImage);
 }
