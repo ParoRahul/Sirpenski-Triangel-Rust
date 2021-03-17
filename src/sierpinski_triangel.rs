@@ -2,12 +2,10 @@ use std::io::{stdout, Write};
 
 use super::point::Point;
 
-use crossterm::{QueueableCommand, Result};
-
 use crossterm::{
     cursor, execute,
     style::{Color, Print, ResetColor, SetBackgroundColor, SetForegroundColor},
-    terminal, ExecutableCommand,
+    terminal, ExecutableCommand, QueueableCommand
 };
 
 use image::{ImageBuffer, Luma};
